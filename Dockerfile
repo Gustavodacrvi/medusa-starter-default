@@ -8,6 +8,8 @@ COPY yarn.* .
 
 RUN apt-get update
 
+RUN npm install medusa-plugin-meilisearch
+
 RUN apt-get install -y python
 
 RUN npm install -g npm@8.1.2
