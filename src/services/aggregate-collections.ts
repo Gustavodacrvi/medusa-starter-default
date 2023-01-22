@@ -17,10 +17,9 @@ class AggregateCollections extends BaseService {
 		this.productService = productService
 	}
 	
-	async aggregatedCollections() {
+	async treeFormatCollections() {
 		const collections = await this.collection.list()
-		
-		const aggregatedCols = collections
+		return collections
 			.filter(col => !col.metadata?.parent)
 			.map(parent => ({
 				...parent,
@@ -28,20 +27,23 @@ class AggregateCollections extends BaseService {
 					subCollection.metadata?.parent_id === parent.id ||
 					subCollection.metadata?.parent_handle === parent.handle
 				)
-			})) as AggregatedCollection[]
-		
+			}))
+	}
+	
+	async aggregatedCollections() {
+		const aggregatedCols = await this.treeFormatCollections() as AggregatedCollection[]
 	
 		const pros: Promise<any>[] = []
 		
 		aggregatedCols.forEach(col => {
-			pros.push(Promise.all([
+			pros.push(
 				(async () => {
 					col.sub_collections = await this.countNumberOfProductsToEachCollection(col.sub_collections as AggregatedCollection[])
 				})(),
 				(async () => {
 					col.count = await this.productService.count({ collection_id: col.id })
 				})(),
-			]))
+			)
 		})
 		
 		await Promise.all(pros)
