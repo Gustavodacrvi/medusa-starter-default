@@ -121,7 +121,7 @@
       "description": "Reimagine the feeling of a classic T-shirt. With our cotton T-shirts, everyday essentials no longer have to be ordinary.",
       "handle": "t-shirt",
       "is_giftcard": false,
-      "weight": 400,
+      "weight": 200,
       "images": [
         "https://medusa-public-images.s3.eu-west-1.amazonaws.com/tee-black-front.png",
         "https://medusa-public-images.s3.eu-west-1.amazonaws.com/tee-black-back.png",
@@ -331,7 +331,7 @@
       "description": "Reimagine the feeling of a classic sweatshirt. With our cotton sweatshirt, everyday essentials no longer have to be ordinary.",
       "handle": "sweatshirt",
       "is_giftcard": false,
-      "weight": 400,
+      "weight": 300,
       "images": [
         "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-front.png",
         "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-back.png"
@@ -431,7 +431,7 @@
       "description": "Reimagine the feeling of classic sweatpants. With our cotton sweatpants, everyday essentials no longer have to be ordinary.",
       "handle": "sweatpants",
       "is_giftcard": false,
-      "weight": 400,
+      "weight": 250,
       "images": [
         "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatpants-gray-front.png",
         "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatpants-gray-back.png"
@@ -531,7 +531,7 @@
       "description": "Reimagine the feeling of classic shorts. With our cotton shorts, everyday essentials no longer have to be ordinary.",
       "handle": "shorts",
       "is_giftcard": false,
-      "weight": 400,
+      "weight": 150,
       "images": [
         "https://medusa-public-images.s3.eu-west-1.amazonaws.com/shorts-vintage-front.png",
         "https://medusa-public-images.s3.eu-west-1.amazonaws.com/shorts-vintage-back.png"
@@ -631,7 +631,7 @@
       "description": "Reimagine the feeling of a classic hoodie. With our cotton hoodie, everyday essentials no longer have to be ordinary.",
       "handle": "hoodie",
       "is_giftcard": false,
-      "weight": 400,
+      "weight": 380,
       "images": [
         "https://medusa-public-images.s3.eu-west-1.amazonaws.com/black_hoodie_front.png",
         "https://medusa-public-images.s3.eu-west-1.amazonaws.com/black_hoodie_back.png"
@@ -731,7 +731,7 @@
       "description": "Reimagine the feeling of a classic longsleeve. With our cotton longsleeve, everyday essentials no longer have to be ordinary.",
       "handle": "longsleeve",
       "is_giftcard": false,
-      "weight": 400,
+      "weight": 330,
       "images": [
         "https://medusa-public-images.s3.eu-west-1.amazonaws.com/ls-black-front.png",
         "https://medusa-public-images.s3.eu-west-1.amazonaws.com/ls-black-back.png"
@@ -825,13 +825,290 @@
         }
       ]
     },
+
+    {
+      "title": "Medusa Golden Sunglasses",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "golden-sunglasses",
+      "is_giftcard": false,
+      "weight": 30,
+      "images": [
+        "https://images.unsplash.com/photo-1511499767150-a48a237f0083?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 9000
+            },
+            {
+              "currency_code": "usd",
+              "amount": 9000
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 2,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Desert Sunglasses",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "desert-sunglasses",
+      "is_giftcard": false,
+      "weight": 30,
+      "images": [
+        "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        "https://images.unsplash.com/photo-1487349384428-12b47aca925e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        "https://images.unsplash.com/photo-1567333126229-db29200c25f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 2000
+            },
+            {
+              "currency_code": "usd",
+              "amount": 2000
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Weird Sunglasses",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "weird-sunglasses",
+      "is_giftcard": false,
+      "weight": 30,
+      "images": [
+        "https://images.unsplash.com/photo-1456421385613-d0666bb96b78?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 1230
+            },
+            {
+              "currency_code": "usd",
+              "amount": 1230
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Advanced Sunglasses",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "advanced-sunglasses",
+      "is_giftcard": false,
+      "weight": 30,
+      "images": [
+        "https://images.unsplash.com/photo-1563891217861-7924b471afb3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 6890
+            },
+            {
+              "currency_code": "usd",
+              "amount": 6890
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+
+    {
+      "title": "Medusa Black Ring Coffee Mug",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "black-ring-coffee-mug",
+      "is_giftcard": false,
+      "weight": 30,
+      "images": [
+        "https://images.unsplash.com/photo-1520031473529-2c06dea61853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 2320
+            },
+            {
+              "currency_code": "usd",
+              "amount": 2320
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Orange Mug",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "orange-mug",
+      "is_giftcard": false,
+      "weight": 30,
+      "images": [
+        "https://images.unsplash.com/photo-1556008531-aa5a99f9739a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 1300
+            },
+            {
+              "currency_code": "usd",
+              "amount": 1300
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Skull Mug",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "skull-mug",
+      "is_giftcard": false,
+      "weight": 30,
+      "images": [
+        "https://images.unsplash.com/photo-1602687770580-c876711bfea0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 7000
+            },
+            {
+              "currency_code": "usd",
+              "amount": 7000
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
     {
       "title": "Medusa Coffee Mug",
       "subtitle": null,
       "description": "Every programmer's best friend.",
       "handle": "coffee-mug",
       "is_giftcard": false,
-      "weight": 400,
+      "weight": 430,
       "images": [
         "https://medusa-public-images.s3.eu-west-1.amazonaws.com/coffee-mug.png"
       ],
@@ -852,6 +1129,1343 @@
             {
               "currency_code": "usd",
               "amount": 1200
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+
+    {
+      "title": "Medusa Pink Wallet",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "pink-wallet",
+      "is_giftcard": false,
+      "weight": 80,
+      "images": [
+        "https://plus.unsplash.com/premium_photo-1669658981591-eefe1aac4a54?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=738&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 4320
+            },
+            {
+              "currency_code": "usd",
+              "amount": 4320
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Credit Card Wallet",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "credit-card-wallet",
+      "is_giftcard": false,
+      "weight": 80,
+      "images": [
+        "https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 9370
+            },
+            {
+              "currency_code": "usd",
+              "amount": 9370
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Phone Wallet",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "phone-wallet",
+      "is_giftcard": false,
+      "weight": 80,
+      "images": [
+        "https://images.unsplash.com/photo-1620774825063-2ecb4615748f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 8321
+            },
+            {
+              "currency_code": "usd",
+              "amount": 8321
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+
+
+    {
+      "title": "Medusa Jean Shorts",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "jean-shorts",
+      "is_giftcard": false,
+      "weight": 80,
+      "images": [
+        "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 2343
+            },
+            {
+              "currency_code": "usd",
+              "amount": 2343
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Dark Jeans",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "dark-jeans",
+      "is_giftcard": false,
+      "weight": 200,
+      "images": [
+        "https://images.unsplash.com/photo-1573662073208-1f58a071c756?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 2343
+            },
+            {
+              "currency_code": "usd",
+              "amount": 2343
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Cut Jeans",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "cut-jeans",
+      "is_giftcard": false,
+      "weight": 200,
+      "images": [
+        "https://images.unsplash.com/photo-1559067515-bf7d799b6d4d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 2343
+            },
+            {
+              "currency_code": "usd",
+              "amount": 2343
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Black White Jeans",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "black-white-jeans",
+      "is_giftcard": false,
+      "weight": 200,
+      "images": [
+        "https://images.unsplash.com/photo-1586792021401-9e9993c9effd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 2343
+            },
+            {
+              "currency_code": "usd",
+              "amount": 2343
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+
+    {
+      "title": "Medusa Fancy Shorts",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "fancy-shorts",
+      "is_giftcard": false,
+      "weight": 200,
+      "images": [
+        "https://images.unsplash.com/photo-1507274301514-7de9f124ff54?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 1890
+            },
+            {
+              "currency_code": "usd",
+              "amount": 1890
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Small Shorts",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "small-shorts",
+      "is_giftcard": false,
+      "weight": 200,
+      "images": [
+        "https://images.pexels.com/photos/69101/pexels-photo-69101.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 1890
+            },
+            {
+              "currency_code": "usd",
+              "amount": 1890
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Special Shorts",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "special-shorts",
+      "is_giftcard": false,
+      "weight": 200,
+      "images": [
+        "https://images.pexels.com/photos/5068913/pexels-photo-5068913.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 1890
+            },
+            {
+              "currency_code": "usd",
+              "amount": 1890
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Orange Shorts",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "orange-shorts",
+      "is_giftcard": false,
+      "weight": 200,
+      "images": [
+        "https://images.pexels.com/photos/9225760/pexels-photo-9225760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 2390
+            },
+            {
+              "currency_code": "usd",
+              "amount": 2390
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+
+    {
+      "title": "Medusa Gray Leggins",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "gray-leggins",
+      "is_giftcard": false,
+      "weight": 175,
+      "images": [
+        "https://images.unsplash.com/photo-1649318099396-7db2ca369eb9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 2390
+            },
+            {
+              "currency_code": "usd",
+              "amount": 2390
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Camouflage Leggins",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "camouflage-leggins",
+      "is_giftcard": false,
+      "weight": 175,
+      "images": [
+        "https://images.pexels.com/photos/10006607/pexels-photo-10006607.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 3222
+            },
+            {
+              "currency_code": "usd",
+              "amount": 3222
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Black Leggins",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "black-leggins",
+      "is_giftcard": false,
+      "weight": 175,
+      "images": [
+        "https://images.unsplash.com/photo-1618355281951-a174b87198e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 3222
+            },
+            {
+              "currency_code": "usd",
+              "amount": 1222
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Beige Leggins",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "beige-leggins",
+      "is_giftcard": false,
+      "weight": 175,
+      "images": [
+        "https://images.unsplash.com/photo-1597297260448-3cc8d0a38388?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 3222
+            },
+            {
+              "currency_code": "usd",
+              "amount": 1222
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+
+    {
+      "title": "Medusa Blue Pants",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "blue-pants",
+      "is_giftcard": false,
+      "weight": 175,
+      "images": [
+        "https://images.unsplash.com/photo-1611937669166-be4e0503b115?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 5000
+            },
+            {
+              "currency_code": "usd",
+              "amount": 5000
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Dark Gray Pants",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "dark-gray-pants",
+      "is_giftcard": false,
+      "weight": 180,
+      "images": [
+        "https://images.unsplash.com/photo-1624378441864-6eda7eac51cb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 4509
+            },
+            {
+              "currency_code": "usd",
+              "amount": 4509
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa White Pants",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "white-pants",
+      "is_giftcard": false,
+      "weight": 180,
+      "images": [
+        "https://images.unsplash.com/photo-1667690932203-8ac3539c1974?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 6321
+            },
+            {
+              "currency_code": "usd",
+              "amount": 6321
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Green Pants",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "green-pants",
+      "is_giftcard": false,
+      "weight": 180,
+      "images": [
+        "https://images.unsplash.com/photo-1596658689529-afdc1e70d4a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=691&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 2821
+            },
+            {
+              "currency_code": "usd",
+              "amount": 2821
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+
+
+    {
+      "title": "Medusa Eagle Shirt",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "eagle-shirt",
+      "is_giftcard": false,
+      "weight": 180,
+      "images": [
+        "https://images.unsplash.com/photo-1571666274590-f8cc87006500?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 2221
+            },
+            {
+              "currency_code": "usd",
+              "amount": 2221
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Blue Tank-top",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "blue-tank-top",
+      "is_giftcard": false,
+      "weight": 180,
+      "images": [
+        "https://images.unsplash.com/photo-1521338488115-be37accc5bd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 2021
+            },
+            {
+              "currency_code": "usd",
+              "amount": 2021
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Red Tank-top",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "red-tank-top",
+      "is_giftcard": false,
+      "weight": 322,
+      "images": [
+        "https://images.unsplash.com/photo-1598971475122-95a9004e2922?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 2923
+            },
+            {
+              "currency_code": "usd",
+              "amount": 2923
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Black Tank-top",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "black-tank-top",
+      "is_giftcard": false,
+      "weight": 322,
+      "images": [
+        "https://images.unsplash.com/photo-1587878552533-2d83acc79eef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 6923
+            },
+            {
+              "currency_code": "usd",
+              "amount": 6923
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+
+    {
+      "title": "Medusa Stylish Blouse",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "stylish-blouse",
+      "is_giftcard": false,
+      "weight": 322,
+      "images": [
+        "https://images.unsplash.com/photo-1608234807905-4466023792f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 2923
+            },
+            {
+              "currency_code": "usd",
+              "amount": 2923
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Checkered Blouse",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "checkered-blouse",
+      "is_giftcard": false,
+      "weight": 322,
+      "images": [
+        "https://images.unsplash.com/photo-1619693872820-98d29369a386?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 2923
+            },
+            {
+              "currency_code": "usd",
+              "amount": 2923
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Dotted Blouse",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "dotted-blouse",
+      "is_giftcard": false,
+      "weight": 322,
+      "images": [
+        "https://images.unsplash.com/photo-1639996258971-46e9925588d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=692&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 1923
+            },
+            {
+              "currency_code": "usd",
+              "amount": 1923
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Flowers Blouse",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "flowers-blouse",
+      "is_giftcard": false,
+      "weight": 312,
+      "images": [
+        "https://images.unsplash.com/photo-1632906512112-9670bead6082?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 7923
+            },
+            {
+              "currency_code": "usd",
+              "amount": 7923
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+
+    {
+      "title": "Medusa Green T-shirt",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "green-t-shirt",
+      "is_giftcard": false,
+      "weight": 312,
+      "images": [
+        "https://images.unsplash.com/photo-1523381294911-8d3cead13475?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 9100
+            },
+            {
+              "currency_code": "usd",
+              "amount": 9100
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Heart T-shirt",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "heart-t-shirt",
+      "is_giftcard": false,
+      "weight": 312,
+      "images": [
+        "https://images.unsplash.com/photo-1613852348851-df1739db8201?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 1590
+            },
+            {
+              "currency_code": "usd",
+              "amount": 1590
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Colorful T-shirt",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "colorful-t-shirt",
+      "is_giftcard": false,
+      "weight": 312,
+      "images": [
+        "https://images.unsplash.com/photo-1594032194509-0056023973b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 1190
+            },
+            {
+              "currency_code": "usd",
+              "amount": 1190
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+
+    {
+      "title": "Medusa Polo Shirt",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "polo-shirt",
+      "is_giftcard": false,
+      "weight": 312,
+      "images": [
+        "https://images.unsplash.com/photo-1625910513399-c9fcba54338c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 1190
+            },
+            {
+              "currency_code": "usd",
+              "amount": 1190
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Flag Polo",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "flag-polo",
+      "is_giftcard": false,
+      "weight": 132,
+      "images": [
+        "https://images.unsplash.com/photo-1562696675-17cb0e43ebb7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 9900
+            },
+            {
+              "currency_code": "usd",
+              "amount": 9900
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Jaguar Polo",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "jaguar-polo",
+      "is_giftcard": false,
+      "weight": 132,
+      "images": [
+        "https://images.pexels.com/photos/5061120/pexels-photo-5061120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 1000
+            },
+            {
+              "currency_code": "usd",
+              "amount": 1000
+            }
+          ],
+          "options": [
+            {
+              "value": "One Size"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medusa Yellow Polo",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum posuere lorem ipsum dolor. Bibendum arcu vitae elementum curabitur vitae. Tellus id interdum velit laoreet id. Sed viverra tellus in hac habitasse. Dignissim enim sit amet venenatis urna cursus eget. Et tortor consequat id porta nibh. Quisque id diam vel quam elementum pulvinar etiam. ",
+      "handle": "yellow-polo",
+      "is_giftcard": false,
+      "weight": 182,
+      "images": [
+        "https://images.pexels.com/photos/6250983/pexels-photo-6250983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      ],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["One Size"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "One Size",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 1500
+            },
+            {
+              "currency_code": "usd",
+              "amount": 1500
             }
           ],
           "options": [

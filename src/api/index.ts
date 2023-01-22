@@ -1,11 +1,13 @@
 import { Router } from "express"
+
+import Collections from "./collections/"
+import TopProducts from "./top-products/"
+
 export default () => {
 	const router = Router()
-	router.get("/store/top-products", async (req, res) => {
-		const topProductsService = req.scope.resolve("topProductsService")
-		res.json({
-			products: await topProductsService.getTopProducts()
-		})
-	})
+	
+	router.use('/', Collections)
+	router.use('/', TopProducts)
+	
 	return router;
 }
