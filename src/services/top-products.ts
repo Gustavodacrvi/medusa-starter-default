@@ -1,6 +1,6 @@
 import { BaseService } from "medusa-interfaces";
 import {OrderService, ProductService} from "@medusajs/medusa"
-import { ProductSelector } from "@medusajs/medusa/dist/types/product"
+import { ProductSelector, FindProductConfig } from "@medusajs/medusa/dist/types/product"
 
 class TopProductsService extends BaseService {
 	protected _productService: ProductService
@@ -12,13 +12,14 @@ class TopProductsService extends BaseService {
 		this._orderService = orderService;
 	}
 	
-	async getTopProducts(productSelector: ProductSelector = {}) {
+	async getTopProducts(productSelector: ProductSelector = {}, config: FindProductConfig = {}) {
 		const products = await this._productService.list({
 			...productSelector,
 			// @ts-ignore
 			status: ['published'],
 		}, {
-			relations: ["variants", "variants.prices", "options", "options.values", "images", "tags", "collection", "type"]
+			relations: ["variants", "variants.prices", "options", "options.values", "images", "tags", "collection", "type"],
+			...config,
 		});
 		products.sort((a, b) => {
 			const aSales = a.metadata && a.metadata.sales ? a.metadata.sales : 0;
