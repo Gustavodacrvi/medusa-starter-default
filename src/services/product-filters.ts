@@ -28,7 +28,7 @@ class ProductFilters extends BaseService {
 		const keysToTake = ['id', "images", "title", "subtitle", "handle"] as Array<keyof Product>
 		
 		const product = (await this.topProducts.getTopProducts({ collection_id: collectionIds }, config))[0] || null
-		if (product) return keysToTake.reduce((obj, key) => ({ ...product, [key]: product[key] }), {}) as Product
+		if (product) return keysToTake.reduce((obj, key) => ({ ...obj, [key]: product[key] }), {}) as Product
 		return null
 	}
 	
