@@ -53,22 +53,27 @@ const plugins = [
 				// apiKey: process.env.MEILISEARCH_API_KEY,
 			},
 			settings: {
-				// index name
 				products: {
-					// MeiliSearch's setting options to be set on a particular index
-					searchableAttributes: ["title", "description", "variant_sku", "weight"],
-					displayedAttributes: [
-						"title",
-						"description",
-						"variant_sku",
-						"thumbnail",
-						"handle",
-						"weight"
-					],
+					indexSettings: {
+						searchableAttributes: [
+							"title",
+							"description",
+							"variant_sku",
+						],
+						displayedAttributes: [
+							"title",
+							"description",
+							"variant_sku",
+							"thumbnail",
+							"handle",
+						],
+					},
+					primaryKey: "id",
 				},
 			},
 		},
 	},
+
 	// Uncomment to add Stripe support.
 	// You can create a Stripe account via: https://stripe.com
 	// {

@@ -20,13 +20,10 @@ class AggregateCollections extends BaseService {
 	async treeFormatCollections() {
 		const collections = await this.collection.list()
 		return collections
-			.filter(col => !col.metadata?.parent)
+			.filter(col => !col.metadata?.parent_id)
 			.map(parent => ({
 				...parent,
-				sub_collections: collections.filter(subCollection =>
-					subCollection.metadata?.parent_id === parent.id ||
-					subCollection.metadata?.parent_handle === parent.handle
-				)
+				sub_collections: collections.filter(subCollection => subCollection.metadata?.parent_id === parent.id)
 			}))
 	}
 	
@@ -57,7 +54,8 @@ class AggregateCollections extends BaseService {
 				count: await this.productService.count({ collection_id: subCollection.id })
 			}) as AggregatedCollection
 		))
-		return collections.filter(col => col.count)
+		return collections
+		// return collections.filter(col => col.count)
 	}
 }
 
