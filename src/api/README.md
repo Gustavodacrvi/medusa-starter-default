@@ -9,19 +9,19 @@ import { getStoreRouter } from "./routes/store"
 import { ConfigModule } from "@medusajs/medusa/dist/types/global";
 
 export default (rootDirectory) => {
-  const { configModule: { projectConfig } } = getConfigFile(
-    rootDirectory,
-    "medusa-config"
-  ) as { configModule: ConfigModule }
-
-  const storeCorsOptions = {
-    origin: projectConfig.store_cors.split(","),
-    credentials: true,
-  }
-
-  const storeRouter = getStoreRouter(storeCorsOptions)
-
-  return [storeRouter]
+	const { configModule: { projectConfig } } = getConfigFile(
+		rootDirectory,
+		"medusa-config"
+	) as { configModule: ConfigModule }
+	
+	const storeCorsOptions = {
+		origin: projectConfig.store_cors.split(","),
+		credentials: true,
+	}
+	
+	const storeRouter = getStoreRouter(storeCorsOptions)
+	
+	return [storeRouter]
 }
 ```
 

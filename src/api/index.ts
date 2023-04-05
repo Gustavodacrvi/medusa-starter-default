@@ -1,6 +1,17 @@
 import { Router } from "express"
 
-export default (rootDirectory: string): Router | Router[] => {
-  // add your custom routes here
-  return []
+import Collections from "./collections/"
+import TopProducts from "./top-products/"
+import ProductFilters from "./product-filters/"
+import MagentoImport from "./trigger-magento-import/"
+
+export default () => {
+	const router = Router()
+	
+	router.use('/', Collections)
+	router.use('/', TopProducts)
+	router.use('/', ProductFilters)
+	router.use('/', MagentoImport)
+	
+	return router;
 }
