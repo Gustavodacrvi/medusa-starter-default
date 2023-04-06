@@ -1,10 +1,10 @@
-import { BaseService } from "medusa-interfaces";
+import {BaseService} from "medusa-interfaces";
 import {
+	ProductCategoryService,
 	ProductCollectionService,
 	ProductService,
-	ShippingProfileService,
-	ProductCategoryService,
-	ProductCategory
+	ProductStatus,
+	ShippingProfileService
 } from "@medusajs/medusa"
 import axios from "axios"
 
@@ -122,15 +122,18 @@ interface BackofficeProduct {
 	short_description: string;
 	description: string;
 	sku: string;
+	
 	buy_price: number;
 	special_price: null | number;
 	wholesale_price: null | number;
 	wholesale_stock: number;
 	wholesale_ean: string | null;
 	recommended_retail_price: number;
+	
 	low_discount_allow: boolean;
 	medium_discount_allow: boolean;
 	high_discount_allow: boolean;
+	
 	active: boolean;
 	featured: boolean;
 	url: string;
@@ -241,6 +244,7 @@ class ImportFromMagento extends BaseService {
 	}) {
 		await this.saveCookie(url, email, password)
 		let { categories, idMap } = await this.importCategories(url)
+		categories = [categories.find(cat => cat.category.includes("Eid"))]
 		
 		const shipping = await this.shipping.createDefault()
 		
@@ -286,6 +290,22 @@ class ImportFromMagento extends BaseService {
 								handle: handle,
 								images: files.map(file => file.url),
 								thumbnail: files[0]?.thumbnail_url,
+								
+								status: ProductStatus.PUBLISHED,
+								
+								variants: [
+									{
+										title: "Default",
+										prices: [
+											{
+												currency_code: "eur",
+												amount: product.buy_price * 100,
+											},
+										],
+										inventory_quantity: 50,
+										manage_inventory: true,
+									},
+								],
 								
 								// Needs to be ingegers?
 								height: isNaN(parseInt(product.height * 10 + '', 10)) ? undefined : parseInt(product.height * 10 + '', 10),
