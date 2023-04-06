@@ -213,11 +213,10 @@ class ImportFromMagento extends BaseService {
 			console.log(`Adding ${category.category} parent category.`)
 			
 			try {
-				// const res = await this.collection.create({ title: category.category, handle: category.seo_url })
-				const res = await this.category.create({ name: category.category, is_internal: false, handle: category.seo_url, is_active: true, parent_category_id: null })
+				const res = await this.collection.create({ title: category.category, handle: category.seo_url })
+				// const res = await this.category.create({ name: category.category, is_internal: false, handle: category.seo_url, is_active: true })
 				newUidMap[category.uid] = res.id
-			} catch (err) {
-			}
+			} catch (err) {}
 		}
 		
 		for (const child of results) {
@@ -226,11 +225,10 @@ class ImportFromMagento extends BaseService {
 			console.log(`Adding ${child.category} child category.`)
 			
 			try {
-				// const res = await this.collection.create({ title: child.category, handle: child.seo_url, metadata: { parent_id: newUidMap[child.parent_category] } })
-				const res = await this.category.create({ name: child.category ,handle: child.seo_url, is_internal: false, is_active: true, parent_category_id: newUidMap[child.parent_category] })
+				const res = await this.collection.create({ title: child.category, handle: child.seo_url, metadata: { parent_id: newUidMap[child.parent_category] } })
+				// const res = await this.category.create({ name: child.category ,handle: child.seo_url, is_internal: false, is_active: true, parent_category_id: newUidMap[child.parent_category] })
 				newUidMap[child.uid] = res.id
-			} catch (err) {
-			}
+			} catch (err) {}
 		}
 		
 		return { categories: results, idMap: newUidMap }
@@ -249,61 +247,75 @@ class ImportFromMagento extends BaseService {
 		const loadProductsOfCategories = async (categories: BackofficeCategory[]) => {
 			for (const cat of categories ){
 				console.log(`Loading products for ${cat.category} category.`)
-				const { data: { results: products } } = await axios.get<{ results: BackofficeProduct[] }>(`${url}/api/products?page_size=100&page=1categories[]=${cat.uid}`)
+				const { data: { results: products } } = await axios.get<{ results: BackofficeProduct[] }>(`${url}/api/products?page_size=50&page=1&categories[]=${cat.uid}`)
 				
-				/*const filesMap: {[sku: string]: BackofficeFile[]} = {}
+				const filesMap: {[sku: string]: BackofficeFile[]} = {}
 				await Promise.all(
 					products.map(async product => {
 						try {
 							const { data: { results: files } } = await axios.get<{ results: BackofficeFile[] }>(`${url}/api/products/${product.sku}/files`)
 							filesMap[product.sku] = files
 						} catch (err) {
+							console.error(err)
 							filesMap[product.sku] = []
 						}
 					})
-				)*/
+				)
 				
 				const ids: string[] = []
 				for (const product of products) {
 					console.log(`Adding ${product.name} product`)
 					try {
-						// const files = filesMap[product.sku]
-						const { data: { results: files } } = await axios.get<{ results: BackofficeFile[] }>(`${url}/api/products/${product.sku}/files`)
+						const files = filesMap[product.sku]
+						// const { data: { results: files } } = await axios.get<{ results: BackofficeFile[] }>(`${url}/api/products/${product.sku}/files`)
 						
-						const medusaProduct = await this.productService.create({
-							title: product.name,
-							description: product.short_description,
-							handle: encodeURIComponent(
-								removeDiacritics(product.name.replace(":", "")).toLowerCase().replace(/-/g, '').replace(/ +(?= )/g,'').replace(/ /g, '-')
-							).replace('"', '').replace("'", ''),
-							images: files.map(file => file.url),
-							thumbnail: files[0]?.thumbnail_url,
-							
-							// Needs to be ingegers?
-							height: parseInt(product.height + '', 10),
-							width: parseInt(product.width + '', 10),
-							weight: parseInt(product.weight + '', 10),
-							
-							external_id: product.sku,
-							metadata: Object.keys(product).reduce((nonObjects, key) => {
-								if (Array.isArray(product[key]) || (typeof product[key] === 'object' && product[key] !== null)) {
-									return nonObjects
-								}
-								return { ...nonObjects, [key]: product[key] }
-							}, {}),
-							
-							profile_id: shipping.id,
-						})
+						const handle = encodeURIComponent(
+							removeDiacritics(product.name.replace(":", "")).toLowerCase().replace(/-/g, '').replace(/ +(?= )/g,'').replace(/ /g, '-')
+						).replace('"', '').replace("'", '')
 						
-						ids.push(medusaProduct.id)
+						let retrievedProduct
+						try {
+							retrievedProduct = await this.productService.retrieveByHandle(handle)
+						} catch (err) {}
+						if (retrievedProduct) {
+							ids.push(retrievedProduct.id)
+						} else {
+							const medusaProduct = await this.productService.create({
+								title: product.name,
+								description: product.short_description,
+								handle: handle,
+								images: files.map(file => file.url),
+								thumbnail: files[0]?.thumbnail_url,
+								
+								// Needs to be ingegers?
+								height: isNaN(parseInt(product.height * 10 + '', 10)) ? undefined : parseInt(product.height * 10 + '', 10),
+								width: isNaN(parseInt(product.width * 10 + '', 10)) ? undefined : parseInt(product.height * 10 + '', 10),
+								weight: isNaN(parseInt(product.weight * 10 + '', 10)) ? undefined : parseInt(product.height * 10 + '', 10),
+								
+								external_id: product.sku,
+								metadata: Object.keys(product).reduce((nonObjects, key) => {
+									if (Array.isArray(product[key]) || (typeof product[key] === 'object' && product[key] !== null)) {
+										return nonObjects
+									}
+									return { ...nonObjects, [key]: product[key] }
+								}, {}),
+								
+								profile_id: shipping.id,
+							})
+							
+							ids.push(medusaProduct.id)
+						}
 					} catch (err) {
+						console.error(err)
 					}
 				}
 				
 				console.log(`Adding ${ids.length} products to category ${cat.category} category.`)
 				try {
-					await this.category.addProducts(idMap[cat.uid], ids)
-				} catch (err) {}
+					await this.collection.addProducts(idMap[cat.uid], ids)
+				} catch (err) {
+					console.error(err)
+				}
 				// await this.category.addProducts(idMap[cat.uid], ids)
 			}
 		}
