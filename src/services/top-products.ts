@@ -26,7 +26,7 @@ class TopProductsService extends BaseService {
 			const bSales = b.metadata && b.metadata.sales ? b.metadata.sales : 0;
 			return aSales > bSales ? -1 : (aSales < bSales ? 1 : 0);
 		});
-		return products.slice(0, 4);
+		return products;
 	}
 	
 	async updateSales(orderId) {

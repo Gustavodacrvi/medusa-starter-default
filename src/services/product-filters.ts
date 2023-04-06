@@ -55,7 +55,9 @@ class ProductFilters extends BaseService {
 		})
 		
 		await Promise.all(pros)
-		return threeCategories
+		
+		threeCategories.forEach(cat => cat.sub_categories = cat.sub_categories.filter(subCat => subCat.product))
+		return threeCategories.filter(cat => cat.product)
 	}
 }
 

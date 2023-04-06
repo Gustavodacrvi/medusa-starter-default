@@ -19,7 +19,6 @@ class ThreeCategories extends BaseService {
 	
 	async treeFormatCategories() {
 		const categories = await this.collection.list({}, { skip: 0, take: 100000 })
-		// return categories
 		return categories
 			.filter(col => !col.metadata?.parent_id)
 			.map(parent => ({
@@ -60,8 +59,7 @@ class ThreeCategories extends BaseService {
 				count: await this.productService.count({ collection_id: subCategory.id })
 			}) as ThreeCategory
 		))
-		return categories
-		// return categories.filter(col => col.count)
+		return categories.filter(col => col.count)
 	}
 }
 
