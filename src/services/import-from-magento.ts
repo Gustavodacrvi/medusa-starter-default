@@ -244,7 +244,6 @@ class ImportFromMagento extends BaseService {
 	}) {
 		await this.saveCookie(url, email, password)
 		let { categories, idMap } = await this.importCategories(url)
-		categories = [categories.find(cat => cat.category.includes("Eid"))]
 		
 		const shipping = await this.shipping.createDefault()
 		

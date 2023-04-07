@@ -11,21 +11,17 @@ export type BestsellerProductCategory = ProductCollection & {
 }
 
 class ProductFilters extends BaseService {
-	protected collection: ProductCollectionService
-	protected productService: ProductService
 	protected threeCategories: ThreeCategoriesService
 	protected topProducts: TopProductsService
 	
-	constructor({ productCollectionService, productService, threeCategoriesService, topProductsService }) {
+	constructor({ threeCategoriesService, topProductsService }) {
 		super();
-		this.collection = productCollectionService
-		this.productService = productService
 		this.threeCategories = threeCategoriesService
 		this.topProducts = topProductsService
 	}
 	
 	async findBesteller(categoryIds: string[], config: FindProductConfig) {
-		const keysToTake = ['id', "images", "title", "subtitle", "handle"] as Array<keyof Product>
+		const keysToTake = ['id', "images", "title", "subtitle", "handle", "variants"] as Array<keyof Product>
 		
 		const product = (await this.topProducts.getTopProducts({ collection_id: categoryIds }, config))[0] || null
 		if (product) return keysToTake.reduce((obj, key) => ({ ...obj, [key]: product[key] }), {}) as Product

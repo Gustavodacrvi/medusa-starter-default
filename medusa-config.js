@@ -35,7 +35,7 @@ const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
 const plugins = [
   `medusa-fulfillment-manual`,
   `medusa-payment-manual`,
-  /*{
+  {
     resolve: `medusa-plugin-meilisearch`,
     options: {
       // config object passed when creating an instance
@@ -64,7 +64,7 @@ const plugins = [
         },
       },
     },
-  },*/
+  },
   // To enable the admin plugin, uncomment the following lines and run `yarn add @medusajs/admin`
   // {
   //   resolve: "@medusajs/admin",
@@ -101,7 +101,7 @@ const projectConfig = {
 }
 
 if (REDIS_URL) {
-  // projectConfig.redis_url = REDIS_URL;
+  projectConfig.redis_url = REDIS_URL;
 }
 
 if (DATABASE_URL && DATABASE_TYPE === "postgres") {
