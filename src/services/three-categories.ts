@@ -1,20 +1,31 @@
 import { BaseService } from "medusa-interfaces";
-import { ProductCollectionService, ProductService, ProductCollection } from "@medusajs/medusa"
+import {ProductCollectionService, ProductService, ProductCollection, Product} from "@medusajs/medusa"
 import {AggregationCursorResult} from "typeorm"
+import {FindProductConfig} from "@medusajs/medusa/dist/types/product"
+import TopProductsService from "./top-products"
 
 export type ThreeCategory = ProductCollection & {
 	count: number;
+	bestseller: Product;
 	sub_categories: ThreeCategory[];
 }
 
 class ThreeCategories extends BaseService {
 	protected collection: ProductCollectionService
 	protected productService: ProductService
+	protected topProducts: TopProductsService
 	
-	constructor({ productCollectionService, productService }) {
+	constructor({ productCollectionService, productService, topProductsService }) {
 		super();
 		this.collection = productCollectionService
+		this.topProducts = topProductsService
 		this.productService = productService
+	}
+	
+	async getCategoryByHandle(handle: string) {
+		const catThree = await this.threeCategories()
+		const flattenedThree = [ ...catThree, ...catThree.map(item => item.sub_categories).flat() ]
+		return flattenedThree.find(item => item.handle === handle)
 	}
 	
 	async treeFormatCategories() {
@@ -32,8 +43,12 @@ class ThreeCategories extends BaseService {
 		
 		const pros: Promise<any>[] = []
 		
+		const config: FindProductConfig = { relations: ["images"] }
 		threeCols.forEach(col => {
 			pros.push(
+				(async () => {
+					col.bestseller = await this.findBesteller([col.id, ...col.sub_categories.map(subCol => subCol.id)], config)
+				})(),
 				(async () => {
 					col.sub_categories = await this.countNumberOfProductsToEachCategory(col.sub_categories as ThreeCategory[])
 				})(),
@@ -49,17 +64,34 @@ class ThreeCategories extends BaseService {
 			col.count += col.sub_categories.reduce((total, sub) => sub.count + total, 0)
 		})
 		
+		this.sortCategoriesByCount(threeCols)
+		threeCols.forEach(parentCat => this.sortCategoriesByCount(parentCat.sub_categories))
+		
 		return threeCols
 	}
 	
-		async countNumberOfProductsToEachCategory(categories: ThreeCategory[]) {
+	sortCategoriesByCount(cats: ThreeCategory[]) {
+		cats.sort((a, b) => a.count > b.count ? -1 : (a.count < b.count ? 1 : 0))
+	}
+	
+	async countNumberOfProductsToEachCategory(categories: ThreeCategory[]) {
 		categories = await Promise.all(
 			categories.map(async subCategory => ({
 				...subCategory,
 				count: await this.productService.count({ collection_id: subCategory.id })
 			}) as ThreeCategory
 		))
-		return categories.filter(col => col.count)
+		return categories
+		// Filter unnecessary, can be done on the frontend!!!
+		// return categories.filter(col => col.count)
+	}
+	
+	async findBesteller(categoryIds: string[], config: FindProductConfig) {
+		const keysToTake = ['id', "images", "title", "subtitle", "handle", "variants"] as Array<keyof Product>
+		
+		const product = (await this.topProducts.getTopProducts({ collection_id: categoryIds }, config))[0] || null
+		if (product) return keysToTake.reduce((obj, key) => ({ ...obj, [key]: product[key] }), {}) as Product
+		return null
 	}
 }
 

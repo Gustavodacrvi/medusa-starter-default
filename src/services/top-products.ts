@@ -6,7 +6,7 @@ class TopProductsService extends BaseService {
 	protected _productService: ProductService
 	protected _orderService: OrderService
 	
-	constructor({ productService, productCollectionService, orderService }) {
+	constructor({ productService, orderService }) {
 		super();
 		this._productService = productService
 		this._orderService = orderService
@@ -17,22 +17,22 @@ class TopProductsService extends BaseService {
 			config.relations.push("variants.prices")
 		}
 		
-		const products = await this._productService.list({
+		const products = (await this._productService.list({
 			...productSelector,
 			// @ts-ignore
 			status: ['published'],
 		}, {
 			relations: ["variants", "variants.prices", "options", "options.values", "images", "tags", "collection", "type"],
-			take: 1000,
+			take: 10000,
 			...config,
-		});
+		})).filter(product => product.variants[0].inventory_quantity > 0)
 		products.sort((a, b) => {
-			const aSales = a.metadata && a.metadata.sales ? a.metadata.sales : 0;
-			const bSales = b.metadata && b.metadata.sales ? b.metadata.sales : 0;
-			return aSales > bSales ? -1 : (aSales < bSales ? 1 : 0);
-		});
+			const aSales = a.metadata && a.metadata.sales ? a.metadata.sales : 0
+			const bSales = b.metadata && b.metadata.sales ? b.metadata.sales : 0
+			return aSales > bSales ? -1 : (aSales < bSales ? 1 : 0)
+		})
 		
-		return products.filter(product => product.variants[0].inventory_quantity > 0);
+		return products
 	}
 	
 	async updateSales(orderId) {
