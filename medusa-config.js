@@ -41,23 +41,36 @@ const plugins = [
       // config object passed when creating an instance
       // of the MeiliSearch client
       config: {
-        host: process.env.MEILISEARCH_HOST,
+        host: process.env.MEILISEARCH_HOST || "http://localhost:7700",
         // apiKey: process.env.MEILISEARCH_API_KEY,
       },
       settings: {
         products: {
           indexSettings: {
+            filterableAttributes: [
+              "collection_id",
+              "collection.handle",
+              "variants.prices.amount",
+              "variants.inventory_quantity",
+              "metadata.featured",
+              "metadata.created_at",
+              "metadata.active",
+            ],
             searchableAttributes: [
               "title",
-              "description",
-              "variant_sku",
+              "external_id",
+              "id",
             ],
             displayedAttributes: [
               "title",
               "description",
-              "variant_sku",
               "thumbnail",
+              "variants.prices.amount",
+              "metadata.featured",
+              "collection_id",
               "handle",
+              "external_id",
+              "id",
             ],
           },
           primaryKey: "id",

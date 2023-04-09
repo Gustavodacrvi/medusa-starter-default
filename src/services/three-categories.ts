@@ -6,7 +6,7 @@ import TopProductsService from "./top-products"
 
 export type ThreeCategory = ProductCollection & {
 	count: number;
-	bestseller: Product;
+	bestseller?: Product;
 	sub_categories: ThreeCategory[];
 }
 
@@ -43,11 +43,10 @@ class ThreeCategories extends BaseService {
 		
 		const pros: Promise<any>[] = []
 		
-		const config: FindProductConfig = { relations: ["images"] }
 		threeCols.forEach(col => {
 			pros.push(
 				(async () => {
-					col.bestseller = await this.findBesteller([col.id, ...col.sub_categories.map(subCol => subCol.id)], config)
+					col.bestseller = await this.findBestseller([col.id])
 				})(),
 				(async () => {
 					col.sub_categories = await this.countNumberOfProductsToEachCategory(col.sub_categories as ThreeCategory[])
@@ -65,7 +64,12 @@ class ThreeCategories extends BaseService {
 		})
 		
 		this.sortCategoriesByCount(threeCols)
-		threeCols.forEach(parentCat => this.sortCategoriesByCount(parentCat.sub_categories))
+		threeCols.forEach(parentCat => {
+			this.sortCategoriesByCount(parentCat.sub_categories)
+			const allBestsellers = [parentCat.bestseller, ...parentCat.sub_categories.map(item => item.bestseller)].filter(item => item)
+			this.topProducts.sortProductsByBestseller(allBestsellers)
+			parentCat.bestseller = allBestsellers[0]
+		})
 		
 		return threeCols
 	}
@@ -76,20 +80,24 @@ class ThreeCategories extends BaseService {
 	
 	async countNumberOfProductsToEachCategory(categories: ThreeCategory[]) {
 		categories = await Promise.all(
-			categories.map(async subCategory => ({
-				...subCategory,
-				count: await this.productService.count({ collection_id: subCategory.id })
-			}) as ThreeCategory
-		))
+			categories.map(async subCategory => {
+				const [count, bestseller] = await Promise.all([
+					this.productService.count({ collection_id: subCategory.id }),
+					this.findBestseller([subCategory.id])
+				])
+				
+				return { ...subCategory, count, bestseller } as ThreeCategory
+			})
+		)
 		return categories
 		// Filter unnecessary, can be done on the frontend!!!
 		// return categories.filter(col => col.count)
 	}
 	
-	async findBesteller(categoryIds: string[], config: FindProductConfig) {
+	async findBestseller(categoryIds: string[]) {
 		const keysToTake = ['id', "images", "title", "subtitle", "handle", "variants"] as Array<keyof Product>
 		
-		const product = (await this.topProducts.getTopProducts({ collection_id: categoryIds }, config))[0] || null
+		const product = (await this.topProducts.getTopProductsByCategory(categoryIds))[0] || null
 		if (product) return keysToTake.reduce((obj, key) => ({ ...obj, [key]: product[key] }), {}) as Product
 		return null
 	}
