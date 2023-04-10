@@ -10,9 +10,10 @@ import {
 } from "@medusajs/medusa"
 import { ProductSelector, FindProductConfig } from "@medusajs/medusa/dist/types/product"
 
-export interface SearchEngineItem {
+export interface SearchEngineProduct {
 	id: string;
 	title: string;
+	handle: string;
 	description: string;
 	thumbnail: string;
 	metadata: {
@@ -64,7 +65,7 @@ class TopProductsService extends BaseService {
 	async getTopProductsByCategory(categories: string[]) {
 		const { hits } = await this.searchService.search("products", '', {
 			filter: `collection_id IN [${categories.join(',')}] AND variants.inventory_quantity > 0`
-		}) as { hits: SearchEngineItem[] }
+		}) as { hits: SearchEngineProduct[] }
 		
 		const products = await this.productService.list({ id: hits.map(product => product.id) }, { take: 10000 })
 		this.sortProductsByBestseller(products)
