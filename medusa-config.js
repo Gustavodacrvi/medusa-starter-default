@@ -47,10 +47,15 @@ const plugins = [
       settings: {
         products: {
           indexSettings: {
+            sortableAttributes: [
+              "variants.prices.amount",
+              "created_at",
+            ],
             filterableAttributes: [
               "collection_id",
               "collection.handle",
               "variants.prices.amount",
+              "variants.id",
               "variants.inventory_quantity",
               "metadata.featured",
               "metadata.created_at",
@@ -60,11 +65,13 @@ const plugins = [
               "title",
               "external_id",
               "id",
+              "variants.id",
             ],
             displayedAttributes: [
               "title",
               "description",
               "thumbnail",
+              "variants.id",
               "variants.prices.amount",
               "metadata.featured",
               "collection_id",

@@ -20,10 +20,12 @@ export interface SearchEngineProduct {
 		featured: boolean;
 	};
 	variants: Array<{
+		id: string;
 		prices: Array<{
 			amount: number;
 		}>,
 	}>;
+	_formatted: any;
 }
 
 class TopProductsService extends BaseService {
@@ -67,7 +69,10 @@ class TopProductsService extends BaseService {
 			filter: `collection_id IN [${categories.join(',')}] AND variants.inventory_quantity > 0`
 		}) as { hits: SearchEngineProduct[] }
 		
-		const products = await this.productService.list({ id: hits.map(product => product.id) }, { take: 10000 })
+		const products = await this.productService.list({ id: hits.map(product => product.id)}, {
+			take: 10000,
+			relations: ["variants", "variants.prices", "options", "options.values", "images", "tags", "collection", "type"],
+		})
 		this.sortProductsByBestseller(products)
 		
 		return products

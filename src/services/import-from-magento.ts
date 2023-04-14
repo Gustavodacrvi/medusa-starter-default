@@ -4,7 +4,8 @@ import {
 	ProductCollectionService,
 	ProductService,
 	ProductStatus,
-	ShippingProfileService
+	ShippingProfileService,
+	SalesChannelService
 } from "@medusajs/medusa"
 import axios from "axios"
 
@@ -250,7 +251,7 @@ class ImportFromMagento extends BaseService {
 		const loadProductsOfCategories = async (categories: BackofficeCategory[]) => {
 			for (const cat of categories ){
 				console.log(`Loading products for ${cat.category} category.`)
-				const { data: { results: products } } = await axios.get<{ results: BackofficeProduct[] }>(`${url}/api/products?page_size=50&page=1&categories[]=${cat.uid}`)
+				const { data: { results: products } } = await axios.get<{ results: BackofficeProduct[] }>(`${url}/api/products?page_size=10000&page=1&categories[]=${cat.uid}`)
 				
 				const filesMap: {[sku: string]: BackofficeFile[]} = {}
 				await Promise.all(

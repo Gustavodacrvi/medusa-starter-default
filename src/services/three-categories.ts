@@ -1,5 +1,5 @@
 import { BaseService } from "medusa-interfaces";
-import {ProductCollectionService, ProductService, ProductCollection, Product} from "@medusajs/medusa"
+import {ProductCollectionService, ProductService, ProductCollection, Product, PaymentService, RegionService, PaymentProviderService} from "@medusajs/medusa"
 import {AggregationCursorResult} from "typeorm"
 import {FindProductConfig} from "@medusajs/medusa/dist/types/product"
 import TopProductsService from "./top-products"
@@ -14,9 +14,15 @@ class ThreeCategories extends BaseService {
 	protected collection: ProductCollectionService
 	protected productService: ProductService
 	protected topProducts: TopProductsService
+	protected regionService: RegionService;
+	protected paymentProviderService: PaymentProviderService;
 	
-	constructor({ productCollectionService, productService, topProductsService }) {
+	constructor({ productCollectionService, productService, regionService, paymentProviderService, topProductsService }) {
 		super();
+		/*this.regionService = regionService
+		this.paymentProviderService = paymentProviderService
+		*/
+		
 		this.collection = productCollectionService
 		this.topProducts = topProductsService
 		this.productService = productService
