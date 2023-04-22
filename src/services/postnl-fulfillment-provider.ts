@@ -1,5 +1,5 @@
 import { FulfillmentService } from "medusa-interfaces"
-import {Cart} from "@medusajs/medusa"
+import { Cart } from "@medusajs/medusa"
 
 interface ShippingOption {
 	id: 'standard' | 'express';
@@ -39,6 +39,7 @@ class PostNlFulfillmentProvider extends FulfillmentService {
 		fromOrder,
 		fulfillment
 	) {
+		// @todo: Send order to PostNL
 		console.log("createFulfillment: ", methodData, fulfillmentItems, fromOrder, fulfillment)
 		// No data is being sent anywhere
 		return Promise.resolve({})

@@ -191,12 +191,14 @@ class ImportFromMagento extends BaseService {
 	protected cookie: string
 	protected axiosConfig: { headers: { cookie: string } }
 	protected shipping: ShippingProfileService
+	protected channel: SalesChannelService
 	
-	constructor({ productCollectionService, productService, shippingProfileService, productCategoryService }) {
+	constructor({ productCollectionService, productService, salesChannelService, shippingProfileService, productCategoryService }) {
 		super();
 		this.collection = productCollectionService
 		this.productService = productService
 		this.shipping = shippingProfileService
+		this.channel = salesChannelService
 		this.category = productCategoryService
 	}
 	
@@ -244,6 +246,12 @@ class ImportFromMagento extends BaseService {
 		password: string;
 	}) {
 		await this.saveCookie(url, email, password)
+		
+		/*const defaultChannel = await this.channel.retrieveDefault()
+		const products = await this.productService.list({}, { take: 1000000 })
+		await this.channel.addProducts(defaultChannel.id, products.map(item => item.id))
+		return;*/
+		
 		let { categories, idMap } = await this.importCategories(url)
 		
 		const shipping = await this.shipping.createDefault()

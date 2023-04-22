@@ -28,13 +28,11 @@ const ADMIN_CORS =
 // CORS to avoid issues when consuming Medusa from a client
 const STORE_CORS = process.env.STORE_CORS || "http://localhost:8000";
 
-const DATABASE_TYPE = process.env.DATABASE_TYPE || "sqlite";
-const DATABASE_URL = process.env.DATABASE_URL || "postgres://localhost/medusa-store";
+const DATABASE_TYPE = process.env.DATABASE_TYPE || "postgres";
+const DATABASE_URL = process.env.DATABASE_URL || "postgres://postgres:postgres@localhost:5432";
 const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
 
 const plugins = [
-  `medusa-fulfillment-manual`,
-  `medusa-payment-manual`,
   {
     resolve: `medusa-plugin-meilisearch`,
     options: {
@@ -50,6 +48,7 @@ const plugins = [
             sortableAttributes: [
               "variants.prices.amount",
               "created_at",
+              "metadata.sales",
             ],
             filterableAttributes: [
               "collection_id",
@@ -58,6 +57,7 @@ const plugins = [
               "variants.id",
               "variants.inventory_quantity",
               "metadata.featured",
+              "metadata.sales",
               "metadata.created_at",
               "metadata.active",
             ],
@@ -74,6 +74,7 @@ const plugins = [
               "variants.id",
               "variants.prices.amount",
               "metadata.featured",
+              "metadata.sales",
               "collection_id",
               "handle",
               "external_id",

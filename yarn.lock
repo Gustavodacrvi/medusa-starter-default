@@ -682,7 +682,7 @@
     "@babel/helper-function-name" "^7.18.9"
     "@babel/helper-plugin-utils" "^7.18.9"
 
-"@babel/plugin-transform-instanceof@^7.12.1", "@babel/plugin-transform-instanceof@^7.8.3":
+"@babel/plugin-transform-instanceof@^7.12.1":
   "integrity" "sha512-Pe1ojhn43iS/IA7GSeWyPJlPdaIekXkVyNeY/mH0Wfk/WAD7sKrxt22reUmENcwr0gaTYGK7TO7y9K8J2x6rqw=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-transform-instanceof/-/plugin-transform-instanceof-7.18.9.tgz"
   "version" "7.18.9"
@@ -971,7 +971,7 @@
   "resolved" "https://registry.npmjs.org/@babel/regjsgen/-/regjsgen-0.8.0.tgz"
   "version" "0.8.0"
 
-"@babel/runtime@^7.15.4", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.15.4", "@babel/runtime@^7.8.4":
   "integrity" "sha512-xwII0//EObnq89Ji5AKYQaRYiW/nZ3llSv29d49IuxPhKbtJoLP+9QUUZ4nVragQVtaVGeZrpB+ZtG/Pdy/POw=="
   "resolved" "https://registry.npmjs.org/@babel/runtime/-/runtime-7.21.0.tgz"
   "version" "7.21.0"
@@ -1447,6 +1447,13 @@
     "class-validator" "^0.13.2"
     "typeorm" "^0.3.11"
     "ulid" "^2.3.0"
+
+"@mollie/api-client@^3.7.0":
+  "integrity" "sha512-8pYq08xwv7VJIQvOJU+3nThZbXuNLhtD8iJQQ4UYW67kxHw4eC6cVE9SNVtUuHRfxTwcKLv5wrZd9jFb3BFqiA=="
+  "resolved" "https://registry.npmjs.org/@mollie/api-client/-/api-client-3.7.0.tgz"
+  "version" "3.7.0"
+  dependencies:
+    "axios" "^0.27.2"
 
 "@msgpackr-extract/msgpackr-extract-win32-x64@3.0.2":
   "integrity" "sha512-O+6Gs8UeDbyFpbSh2CPEz/UOrrdWPTBYNblZK5CxxLisYt4kGX3Sc+czffFonyjiGSq3jWLwJS/CCJc7tBr4sQ=="
@@ -2244,6 +2251,14 @@
   "version" "0.21.4"
   dependencies:
     "follow-redirects" "^1.14.0"
+
+"axios@^0.27.2":
+  "integrity" "sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ=="
+  "resolved" "https://registry.npmjs.org/axios/-/axios-0.27.2.tgz"
+  "version" "0.27.2"
+  dependencies:
+    "follow-redirects" "^1.14.9"
+    "form-data" "^4.0.0"
 
 "axios@^1.3.4":
   "integrity" "sha512-toYm+Bsyl6VC5wSkfkbbNB6ROv7KY93PEBBL6xyDczaIHasAiv4wPqQ/c4RjoQzipxRD2W5g21cOqQulZ7rHwQ=="
@@ -3734,7 +3749,7 @@
   "resolved" "https://registry.npmjs.org/fn.name/-/fn.name-1.1.0.tgz"
   "version" "1.1.0"
 
-"follow-redirects@^1.14.0", "follow-redirects@^1.15.0":
+"follow-redirects@^1.14.0", "follow-redirects@^1.14.9", "follow-redirects@^1.15.0":
   "integrity" "sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA=="
   "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.2.tgz"
   "version" "1.15.2"
@@ -5214,26 +5229,10 @@
   "resolved" "https://registry.npmjs.org/medusa-core-utils/-/medusa-core-utils-1.2.0.tgz"
   "version" "1.2.0"
 
-"medusa-fulfillment-manual@^1.1.37":
-  "integrity" "sha512-msqMJ1lRhMyYXEZDyILpo0ezkFnQYPPbZLqm6emRr1BoKRtYMZ5bHfts9tVnufPYCWzAOGoj66gXTQSX0UBwjw=="
-  "resolved" "https://registry.npmjs.org/medusa-fulfillment-manual/-/medusa-fulfillment-manual-1.1.37.tgz"
-  "version" "1.1.37"
-  dependencies:
-    "@babel/plugin-transform-classes" "^7.9.5"
-    "@babel/plugin-transform-instanceof" "^7.8.3"
-    "@babel/runtime" "^7.7.6"
-    "express" "^4.17.1"
-    "medusa-core-utils" "^1.2.0"
-
 "medusa-interfaces@^1.3.7", "medusa-interfaces@1.3.7":
   "integrity" "sha512-vU1PjepGeglUmEqoBY72gx5Pfj5Uv3VCO3oqYpj6hSz55jhy4xnUNhf4Ttw1mhqGmwtyi9UkHx+aTuCcYx24Ww=="
   "resolved" "https://registry.npmjs.org/medusa-interfaces/-/medusa-interfaces-1.3.7.tgz"
   "version" "1.3.7"
-
-"medusa-payment-manual@^1.0.23":
-  "integrity" "sha512-tlwch9BViRMQPtufX14jpStZxojydrDAPOJMQsxmIyPU14RJ3rvv3ESPHYIIZDWJ6ZCo95yo+/kng71STdbeTw=="
-  "resolved" "https://registry.npmjs.org/medusa-payment-manual/-/medusa-payment-manual-1.0.23.tgz"
-  "version" "1.0.23"
 
 "medusa-payment-stripe@^2.0.0":
   "integrity" "sha512-WSYG7rIBdAqsCI72z76IWegSndpFnWPj1fwY08Uq1ZRpj8aqZ1/kMTjIs6euxe3BkQJeN09cpnJCC4WhFz6Cuw=="
