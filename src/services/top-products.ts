@@ -10,24 +10,6 @@ import {
 } from "@medusajs/medusa"
 import { ProductSelector, FindProductConfig } from "@medusajs/medusa/dist/types/product"
 
-export interface SearchEngineProduct {
-	id: string;
-	title: string;
-	handle: string;
-	description: string;
-	thumbnail: string;
-	metadata: {
-		featured: boolean;
-	};
-	variants: Array<{
-		id: string;
-		prices: Array<{
-			amount: number;
-		}>,
-	}>;
-	_formatted: any;
-}
-
 class TopProductsService extends BaseService {
 	protected productService: ProductService
 	protected orderService: OrderService
@@ -65,15 +47,12 @@ class TopProductsService extends BaseService {
 	}*/
 	
 	async getTopProductsByCategory(categories: string[]) {
-		const { hits } = await this.searchService.search("products", '', {
-			filter: `collection_id IN [${categories.join(',')}] AND variants.inventory_quantity > 0`
-		}) as { hits: SearchEngineProduct[] }
+		const { hits: products } = await this.searchService.search("products", '', {
+			filter: `collection_id IN [${categories.join(',')}] AND variants.inventory_quantity > 0`,
+			sort: ["metadata.sales:desc"],
+		}) as { hits: Product[] }
 		
-		const products = await this.productService.list({ id: hits.map(product => product.id)}, {
-			take: 10000,
-			relations: ["variants", "variants.prices", "options", "options.values", "images", "tags", "collection", "type"],
-		})
-		this.sortProductsByBestseller(products)
+		// this.sortProductsByBestseller(products)
 		
 		return products
 	}

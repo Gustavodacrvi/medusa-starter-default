@@ -247,6 +247,10 @@ class ImportFromMagento extends BaseService {
 	}) {
 		await this.saveCookie(url, email, password)
 		
+		/*const products = await this.productService.list({ q: "Ramadan Mubarak wenskaart" })
+		console.log(products[0])
+		return await this.productService.update(products[0].id, { metadata: { upselling: { '0001': 32, '0002': 4 } } })*/
+		
 		/*const defaultChannel = await this.channel.retrieveDefault()
 		const products = await this.productService.list({}, { take: 1000000 })
 		await this.channel.addProducts(defaultChannel.id, products.map(item => item.id))

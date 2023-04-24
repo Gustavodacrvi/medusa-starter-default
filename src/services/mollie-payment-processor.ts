@@ -206,6 +206,7 @@ class MolliePaymentProcessor extends AbstractPaymentProcessor {
 	async capturePayment(
 		paymentSessionData: Record<string, unknown>
 	): Promise<Record<string, unknown> | PaymentProcessorError> {
+		// @todo: Implement this part!!!
 		throw new Error("Capture, Method not implemented.")
 	}
 	

@@ -46,7 +46,6 @@ class ThreeCategories extends BaseService {
 	
 	async threeCategories() {
 		const threeCols = await this.treeFormatCategories() as ThreeCategory[]
-		
 		const pros: Promise<any>[] = []
 		
 		threeCols.forEach(col => {
