@@ -10,6 +10,7 @@ import createMollieClient, {Payment} from '@mollie/api-client'
 import { Address as MollieAddress } from "@mollie/api-client/dist/types/src/data/global"
 import {CreateParameters} from "@mollie/api-client/dist/types/src/binders/payments/parameters"
 import {UpdateParameters} from "@mollie/api-client/dist/types/src/binders/orders/parameters"
+import CrossellingDiscountService from "./crosselling-discount"
 // @todo: Put this on a env variable!
 
 
@@ -52,11 +53,6 @@ function medusaContextToMollieData(context: PaymentProcessorContext): CreatePara
 	applicationFee: ''
 })*/
 function mollieResponseToMedusaResponse(payment: Payment) {
-	console.log("session_data: ", {
-		payment_id: payment.id,
-		method: payment.method,
-		redirect_url: payment?._links?.checkout?.href,
-	})
 	return {
 		payment_id: payment.id,
 		method: payment.method,
@@ -82,12 +78,12 @@ function getMolliePaymentStatus(payment: Payment) {
 class MolliePaymentProcessor extends AbstractPaymentProcessor {
 	static identifier = "mollie"
 	
-	protected cart: CartService;
+	protected crossellingDiscount: CrossellingDiscountService;
 	protected mollie: ReturnType<typeof createMollieClient>;
 	
 	constructor(services) {
 		super(services)
-		this.cart = services.cartService;
+		this.crossellingDiscount = services.crossellingDiscountService;
 		this.mollie = createMollieClient({ apiKey: 'test_Agd9HbxSNkwaWSukSdENcVkJ6ym42S' })
 	}
 	
@@ -127,11 +123,23 @@ class MolliePaymentProcessor extends AbstractPaymentProcessor {
 		}
 		> {
 		try {
-			console.log(paymentSessionData)
 			const payment = await this.mollie.payments.get(paymentSessionData.payment_id as string)
+			
+			const status = getMolliePaymentStatus(payment)
+			let data = mollieResponseToMedusaResponse(payment) as any
+			
+			console.log("payment:: ", payment)
+			console.log("context:: ", context)
+			console.log("paymentSessionData:: ", paymentSessionData)
+			if (await this.crossellingDiscount.isAllowedToHaveDiscount(payment, context, paymentSessionData)) {
+				data = {
+					...data,
+					...await this.crossellingDiscount.createCrossellingDiscount(payment, context as any, paymentSessionData)
+				}
+			}
 			return {
-				status: getMolliePaymentStatus(payment),
-				data: mollieResponseToMedusaResponse(payment),
+				status,
+				data,
 			}
 		} catch (err) {
 			console.error("authorizePayment: ", err)

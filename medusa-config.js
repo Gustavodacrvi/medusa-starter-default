@@ -29,7 +29,7 @@ const ADMIN_CORS =
 const STORE_CORS = process.env.STORE_CORS || "http://localhost:8000";
 
 const DATABASE_TYPE = process.env.DATABASE_TYPE || "postgres";
-const DATABASE_URL = process.env.DATABASE_URL || "postgres://postgres:postgres@localhost:5432";
+const DATABASE_URL = process.env.DATABASE_URL || `postgres://postgres:postgres@localhost:5432`;
 const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
 
 const plugins = [
@@ -47,6 +47,7 @@ const plugins = [
           indexSettings: {
             sortableAttributes: [
               "created_at",
+              "external_id",
               "metadata.sales",
 
               "variants.prices.amount",
@@ -58,18 +59,27 @@ const plugins = [
               "variants.prices.amount",
               "variants.id",
               "variants.inventory_quantity",
+              "id",
+
               "metadata.featured",
+              "metadata.active",
               "metadata.sales",
               "metadata.created_at",
-              "metadata.active",
+              "metadata.crossellingProductExternalIds",
+
+              "metadata.low_discount_allow",
+              "metadata.high_discount_allow",
+              "metadata.medium_discount_allow",
             ],
             searchableAttributes: [
               "title",
-              "metadata.upsellingIds",
               "external_id",
               "id",
               "variants.id",
             ],
+            pagination: {
+              maxTotalHits: 5000
+            },
           },
           primaryKey: "id",
         },

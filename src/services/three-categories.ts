@@ -6,6 +6,7 @@ import TopProductsService from "./top-products"
 
 export type ThreeCategory = ProductCollection & {
 	count: number;
+	sales: number;
 	bestseller?: Product;
 	sub_categories: ThreeCategory[];
 }
@@ -51,7 +52,9 @@ class ThreeCategories extends BaseService {
 		threeCols.forEach(col => {
 			pros.push(
 				(async () => {
-					col.bestseller = await this.findBestseller([col.id])
+					const { bestseller, sales } = await this.calculateBestseller([col.id])
+					col.bestseller = bestseller
+					col.sales = sales
 				})(),
 				(async () => {
 					col.sub_categories = await this.countNumberOfProductsToEachCategory(col.sub_categories as ThreeCategory[])
@@ -66,11 +69,12 @@ class ThreeCategories extends BaseService {
 		
 		threeCols.forEach(col => {
 			col.count += col.sub_categories.reduce((total, sub) => sub.count + total, 0)
+			col.sales += col.sub_categories.reduce((total, sub) => sub.sales + total, 0)
 		})
 		
-		this.sortCategoriesByCount(threeCols)
+		this.sortCategories(threeCols)
 		threeCols.forEach(parentCat => {
-			this.sortCategoriesByCount(parentCat.sub_categories)
+			this.sortCategories(parentCat.sub_categories)
 			const allBestsellers = [parentCat.bestseller, ...parentCat.sub_categories.map(item => item.bestseller)].filter(item => item)
 			this.topProducts.sortProductsByBestseller(allBestsellers)
 			parentCat.bestseller = allBestsellers[0]
@@ -79,19 +83,25 @@ class ThreeCategories extends BaseService {
 		return threeCols
 	}
 	
-	sortCategoriesByCount(cats: ThreeCategory[]) {
-		cats.sort((a, b) => a.count > b.count ? -1 : (a.count < b.count ? 1 : 0))
+	sortCategories(cats: ThreeCategory[]) {
+		cats.sort((a, b) => {
+			if (a.sales && !b.sales) return -1
+			if (!a.sales && b.sales) return 1
+			if (!a.sales && !b.sales && a.sales === b.sales) return a.count > b.count ? -1 : (a.count < b.count ? 1 : 0)
+			
+			return a.sales > b.sales ? -1 : (a.sales < b.sales ? 1 : 0)
+		})
 	}
 	
 	async countNumberOfProductsToEachCategory(categories: ThreeCategory[]) {
 		categories = await Promise.all(
 			categories.map(async subCategory => {
-				const [count, bestseller] = await Promise.all([
+				const [count, { bestseller, sales }] = await Promise.all([
 					this.productService.count({ collection_id: subCategory.id }),
-					this.findBestseller([subCategory.id])
+					this.calculateBestseller([subCategory.id])
 				])
 				
-				return { ...subCategory, count, bestseller } as ThreeCategory
+				return { ...subCategory, count, bestseller, sales } as ThreeCategory
 			})
 		)
 		return categories
@@ -99,12 +109,23 @@ class ThreeCategories extends BaseService {
 		// return categories.filter(col => col.count)
 	}
 	
-	async findBestseller(categoryIds: string[]) {
-		const keysToTake = ['id', "images", "title", "subtitle", "handle", "variants"] as Array<keyof Product>
+	async calculateBestseller(categoryIds: string[]) {
+		const keysToTake = ['id', "images", "title", "subtitle", "handle", "variants", "metadata"] as Array<keyof Product>
 		
-		const product = (await this.topProducts.getTopProductsByCategory(categoryIds))[0] || null
-		if (product) return keysToTake.reduce((obj, key) => ({ ...obj, [key]: product[key] }), {}) as Product
-		return null
+		const products = await this.topProducts.getTopProductsByCategory(categoryIds)
+		
+		let bestseller = products[0]
+		/*products.forEach(candidate => {
+			if (
+				!bestseller.metadata?.sales ||
+				candidate.metadata?.sales > bestseller.metadata?.sales
+			) {
+				bestseller = candidate
+			}
+		})*/
+		
+		if (bestseller) bestseller = keysToTake.reduce((obj, key) => ({ ...obj, [key]: bestseller[key] }), {}) as unknown as Product
+		return { bestseller, sales: products.reduce((total, item) => ((item.metadata?.sales as number) || 0) + total, 0) }
 	}
 }
 

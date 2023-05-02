@@ -1,5 +1,6 @@
 import { BaseService } from "medusa-interfaces";
 import {
+	LineItem,
 	MoneyAmount,
 	OrderService,
 	Product,
@@ -47,10 +48,13 @@ class TopProductsService extends BaseService {
 	}*/
 	
 	async getTopProductsByCategory(categories: string[]) {
+		// @todo: Somehow reuse code for only getting products active and in stock
+		// @todo: Sorting is for some reason not working, figure this out later!
 		const { hits: products } = await this.searchService.search("products", '', {
-			filter: `collection_id IN [${categories.join(',')}] AND variants.inventory_quantity > 0`,
+			filter: [`collection_id IN [${categories.join(',')}]`, `variants.inventory_quantity > 0`, 'metadata.active = true'],
 			sort: ["metadata.sales:desc"],
 		}) as { hits: Product[] }
+		
 		
 		// this.sortProductsByBestseller(products)
 		
@@ -69,19 +73,34 @@ class TopProductsService extends BaseService {
 		const order = await this.orderService.retrieve(orderId, {
 			relations: ["items", "items.variant", "items.variant.product"]
 		})
-		if (order.items && order.items.length) {
-			for (let i = 0; i < order.items.length; i++) {
-				const item = order.items[i]
-				const product = await this.productService.retrieve(item.variant.product.id, {
+		const getId = (item: LineItem) => item.variant.product.id
+		const getSku = (item: LineItem) => item.variant.product.external_id
+		await Promise.all(
+			order.items.map(async item => {
+				const product = await this.productService.retrieve(getId(item), {
 					relations: ["variants", "variants.prices", "options", "options.values", "images", "tags", "collection", "type"]
 				})
-				const sales = product.metadata && product.metadata.sales ? product.metadata.sales as number : 0
-				await this.productService.update(product.id, {
-					metadata: { sales: sales + 1 }
-				})
+				const otherProducts = order.items.filter(other => getId(other) !== getId(item))
 				
-			}
-		}
+				const sales = product.metadata && product.metadata.sales ? product.metadata.sales as number : 0
+				const distribution = (product.metadata?.crossellingDistribution || {}) as {[key: string]: number | undefined}
+				const externalIds = (product.metadata?.crossellingProductExternalIds || []) as string[]
+				await this.productService.update(product.id, {
+					metadata: {
+						sales: sales + 1,
+						
+						crossellingProductExternalIds: [ ...externalIds, ...otherProducts.map(getSku) ],
+						crossellingDistribution: {
+							...distribution,
+							...otherProducts.reduce((newDist, other) => ({
+								...newDist,
+								[getSku(other)]: (distribution[getSku(other)] || 0) + 1,
+							}), {})
+						},
+					}
+				})
+			})
+		)
 	}
 }
 
