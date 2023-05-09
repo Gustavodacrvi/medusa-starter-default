@@ -1624,6 +1624,29 @@
   "resolved" "https://registry.npmjs.org/@oclif/screen/-/screen-1.0.4.tgz"
   "version" "1.0.4"
 
+"@sendgrid/client@^7.7.0":
+  "integrity" "sha512-SxH+y8jeAQSnDavrTD0uGDXYIIkFylCo+eDofVmZLQ0f862nnqbC3Vd1ej6b7Le7lboyzQF6F7Fodv02rYspuA=="
+  "resolved" "https://registry.npmjs.org/@sendgrid/client/-/client-7.7.0.tgz"
+  "version" "7.7.0"
+  dependencies:
+    "@sendgrid/helpers" "^7.7.0"
+    "axios" "^0.26.0"
+
+"@sendgrid/helpers@^7.7.0":
+  "integrity" "sha512-3AsAxfN3GDBcXoZ/y1mzAAbKzTtUZ5+ZrHOmWQ279AuaFXUNCh9bPnRpN504bgveTqoW+11IzPg3I0WVgDINpw=="
+  "resolved" "https://registry.npmjs.org/@sendgrid/helpers/-/helpers-7.7.0.tgz"
+  "version" "7.7.0"
+  dependencies:
+    "deepmerge" "^4.2.2"
+
+"@sendgrid/mail@^7.7.0":
+  "integrity" "sha512-5+nApPE9wINBvHSUxwOxkkQqM/IAAaBYoP9hw7WwgDNQPxraruVqHizeTitVtKGiqWCKm2mnjh4XGN3fvFLqaw=="
+  "resolved" "https://registry.npmjs.org/@sendgrid/mail/-/mail-7.7.0.tgz"
+  "version" "7.7.0"
+  dependencies:
+    "@sendgrid/client" "^7.7.0"
+    "@sendgrid/helpers" "^7.7.0"
+
 "@sinonjs/commons@^1.7.0":
   "integrity" "sha512-Ky+XkAkqPZSm3NLBeUng77EBQl3cmeJhITaGHdYH8kjVB+aun3S4XBRti2zt17mtt0mIUDiNxYeoJm6drVvBJQ=="
   "resolved" "https://registry.npmjs.org/@sinonjs/commons/-/commons-1.8.6.tgz"
@@ -2252,6 +2275,13 @@
   dependencies:
     "follow-redirects" "^1.14.0"
 
+"axios@^0.26.0":
+  "integrity" "sha512-fPwcX4EvnSHuInCMItEhAGnaSEXRBjtzh9fOtsE6E1G6p7vl7edEeZe11QHf18+6+9gR5PbKV/sGKNaD8YaMeA=="
+  "resolved" "https://registry.npmjs.org/axios/-/axios-0.26.1.tgz"
+  "version" "0.26.1"
+  dependencies:
+    "follow-redirects" "^1.14.8"
+
 "axios@^0.27.2":
   "integrity" "sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ=="
   "resolved" "https://registry.npmjs.org/axios/-/axios-0.27.2.tgz"
@@ -2268,6 +2298,13 @@
     "follow-redirects" "^1.15.0"
     "form-data" "^4.0.0"
     "proxy-from-env" "^1.1.0"
+
+"axios@0.21.4":
+  "integrity" "sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg=="
+  "resolved" "https://registry.npmjs.org/axios/-/axios-0.21.4.tgz"
+  "version" "0.21.4"
+  dependencies:
+    "follow-redirects" "^1.14.0"
 
 "babel-jest@^27.5.1", "babel-jest@>=27.0.0 <28":
   "integrity" "sha512-cdQ5dXjGRd0IBRATiQ4mZGlGlRE8kJpjPOixdNRdT+m3UcNqmYWN6rK6nvtXYfY3D76cb8s/O1Ss8ea24PIwcg=="
@@ -2421,7 +2458,7 @@
   "resolved" "https://registry.npmjs.org/bluebird/-/bluebird-3.5.1.tgz"
   "version" "3.5.1"
 
-"body-parser@^1.19.0":
+"body-parser@^1.19.0", "body-parser@^1.20.2":
   "integrity" "sha512-ml9pReCu3M61kGlqoTm2umSXTlRTuGTx0bfYj+uIUKKYycG5NtSbeetV3faSU6R7ajOPw0g/J1PvK4qNy7s5bA=="
   "resolved" "https://registry.npmjs.org/body-parser/-/body-parser-1.20.2.tgz"
   "version" "1.20.2"
@@ -3164,6 +3201,13 @@
   dependencies:
     "ms" "2.0.0"
 
+"debug@4.3.2":
+  "integrity" "sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw=="
+  "resolved" "https://registry.npmjs.org/debug/-/debug-4.3.2.tgz"
+  "version" "4.3.2"
+  dependencies:
+    "ms" "2.1.2"
+
 "decamelize@^1.2.0":
   "integrity" "sha512-z2S+W9X73hAUUki+N+9Za2lBlun89zigOyGrsax+KUQ6wKW4ZoWpEYBkGhQjwAjjDCkWxhY0VKEhk8wzY7F5cA=="
   "resolved" "https://registry.npmjs.org/decamelize/-/decamelize-1.2.0.tgz"
@@ -3749,7 +3793,7 @@
   "resolved" "https://registry.npmjs.org/fn.name/-/fn.name-1.1.0.tgz"
   "version" "1.1.0"
 
-"follow-redirects@^1.14.0", "follow-redirects@^1.14.9", "follow-redirects@^1.15.0":
+"follow-redirects@^1.14.0", "follow-redirects@^1.14.8", "follow-redirects@^1.14.9", "follow-redirects@^1.15.0":
   "integrity" "sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA=="
   "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.2.tgz"
   "version" "1.15.2"
@@ -5035,6 +5079,16 @@
   "resolved" "https://registry.npmjs.org/loader-runner/-/loader-runner-4.3.0.tgz"
   "version" "4.3.0"
 
+"localtunnel@^2.0.2":
+  "integrity" "sha512-n418Cn5ynvJd7m/N1d9WVJISLJF/ellZnfsLnx8WBWGzxv/ntNcFkJ1o6se5quUhCplfLGBNL5tYHiq5WF3Nug=="
+  "resolved" "https://registry.npmjs.org/localtunnel/-/localtunnel-2.0.2.tgz"
+  "version" "2.0.2"
+  dependencies:
+    "axios" "0.21.4"
+    "debug" "4.3.2"
+    "openurl" "1.1.1"
+    "yargs" "17.1.1"
+
 "locate-path@^5.0.0":
   "integrity" "sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g=="
   "resolved" "https://registry.npmjs.org/locate-path/-/locate-path-5.0.0.tgz"
@@ -5768,6 +5822,11 @@
     "define-lazy-prop" "^2.0.0"
     "is-docker" "^2.1.1"
     "is-wsl" "^2.2.0"
+
+"openurl@1.1.1":
+  "integrity" "sha512-d/gTkTb1i1GKz5k3XE3XFV/PxQ1k45zDqGP2OA7YhgsaLoqm6qRvARAZOFer1fcXritWlGBRCu/UgeS4HAnXAA=="
+  "resolved" "https://registry.npmjs.org/openurl/-/openurl-1.1.1.tgz"
+  "version" "1.1.1"
 
 "optional-require@^1.1.8":
   "integrity" "sha512-jq83qaUb0wNg9Krv1c5OQ+58EK+vHde6aBPzLvPPqJm89UQWsvSuFy9X/OSNJnFeSOKo7btE0n8Nl2+nE+z5nA=="
@@ -7802,3 +7861,16 @@
     "string-width" "^4.2.3"
     "y18n" "^5.0.5"
     "yargs-parser" "^21.1.1"
+
+"yargs@17.1.1":
+  "integrity" "sha512-c2k48R0PwKIqKhPMWjeiF6y2xY/gPMUlro0sgxqXpbOIohWiLNXWslsootttv7E1e73QPAMQSg5FeySbVcpsPQ=="
+  "resolved" "https://registry.npmjs.org/yargs/-/yargs-17.1.1.tgz"
+  "version" "17.1.1"
+  dependencies:
+    "cliui" "^7.0.2"
+    "escalade" "^3.1.1"
+    "get-caller-file" "^2.0.5"
+    "require-directory" "^2.1.1"
+    "string-width" "^4.2.0"
+    "y18n" "^5.0.5"
+    "yargs-parser" "^20.2.2"
