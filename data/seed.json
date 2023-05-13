@@ -39,6 +39,436 @@
       "price_type": "calculated"
     }
   ],
-  "products": [],
+  "products": [
+    {
+      "title": "Nomad Pouch",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque id nibh tortor id aliquet lectus proin. Nisi porta lorem mollis aliquam. Sed augue lacus viverra vitae congue eu. Et sollicitudin ac orci phasellus egestas. Tellus molestie nunc non blandit massa. ",
+      "handle": "nomad-pouch",
+      "is_giftcard": false,
+      "weight": 400,
+      "images": ["https://tailwindui.com/img/ecommerce-images/category-page-07-product-01.jpg"],
+      "options": [
+        {
+          "title": "Color",
+          "values": ["#374151", "#FDE68A", "#E5E7EB"]
+        },
+        {
+          "title": "Size",
+          "values": ["XS", "M"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "Default",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 15000
+            }
+          ],
+          "options": [
+            {
+              "value": "#374151"
+            },
+            {
+              "value": "XS"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        },
+        {
+          "title": "Default",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 15000
+            }
+          ],
+          "options": [
+            {
+              "value": "#FDE68A"
+            },
+            {
+              "value": "XS"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        },
+        {
+          "title": "Default",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 15000
+            }
+          ],
+          "options": [
+            {
+              "value": "#E5E7EB"
+            },
+            {
+              "value": "XS"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Zip Tote Basket",
+      "subtitle": null,
+      "description": "Aenean sed adipiscing diam donec adipiscing tristique risus nec feugiat. Commodo elit at imperdiet dui accumsan sit. Ullamcorper eget nulla facilisi etiam. ",
+      "handle": "zip-tote-basket",
+      "is_giftcard": false,
+      "weight": 400,
+      "images": ["https://tailwindui.com/img/ecommerce-images/category-page-07-product-02.jpg"],
+      "options": [
+        {
+          "title": "Color",
+          "values": ["#FEF3C7", "#4B5563"]
+        },
+        {
+          "title": "Size",
+          "values": ["M", "L"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "Default",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 14000
+            }
+          ],
+          "options": [
+            {
+              "value": "#FEF3C7"
+            },
+            {
+              "value": "M"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        },
+        {
+          "title": "Default",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 14000
+            }
+          ],
+          "options": [
+            {
+              "value": "#4B5563"
+            },
+            {
+              "value": "M"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        },
+        {
+          "title": "Default",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 14000
+            }
+          ],
+          "options": [
+            {
+              "value": "#FEF3C7"
+            },
+            {
+              "value": "L"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        },
+        {
+          "title": "Default",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 14000
+            }
+          ],
+          "options": [
+            {
+              "value": "#4B5563"
+            },
+            {
+              "value": "L"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Medium Stuff Satchel",
+      "subtitle": null,
+      "description": "Orci nulla pellentesque dignissim enim sit amet. Scelerisque in dictum non consectetur a erat nam at lectus. Odio facilisis mauris sit amet massa vitae. Ornare arcu odio ut sem. Mauris pellentesque pulvinar pellentesque habitant. Dictum non consectetur a erat nam at lectus urna duis. Porttitor massa id neque aliquam vestibulum morbi blandit.",
+      "handle": "medium-stuff-satchel",
+      "is_giftcard": false,
+      "weight": 400,
+      "images": ["https://tailwindui.com/img/ecommerce-images/category-page-07-product-03.jpg"],
+      "options": [
+        {
+          "title": "Color",
+          "values": ["#FEF3C7", "#4B5563", "#7C2D12"]
+        },
+        {
+          "title": "Size",
+          "values": ["XS", "M", "L"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "Default",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 21000
+            }
+          ],
+          "options": [
+            {
+              "value": "#FEF3C7"
+            },
+            {
+              "value": "M"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        },
+        {
+          "title": "Default",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 21000
+            }
+          ],
+          "options": [
+            {
+              "value": "#7C2D12"
+            },
+            {
+              "value": "L"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        },
+        {
+          "title": "Default",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 21000
+            }
+          ],
+          "options": [
+            {
+              "value": "#FEF3C7"
+            },
+            {
+              "value": "L"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "High Wall Tote",
+      "subtitle": null,
+      "description": "Non tellus orci ac auctor augue mauris. Risus commodo viverra maecenas accumsan lacus vel. Mattis vulputate enim nulla aliquet porttitor. Tortor aliquam nulla facilisi cras fermentum odio. Eleifend mi in nulla posuere sollicitudin aliquam. Ipsum consequat nisl vel pretium lectus. Ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget. Congue quisque egestas diam in arcu cursus euismod quis. Risus pretium quam vulputate dignissim suspendisse in.",
+      "handle": "high-wall-tote",
+      "is_giftcard": false,
+      "weight": 400,
+      "images": ["https://tailwindui.com/img/ecommerce-images/category-page-07-product-04.jpg"],
+      "options": [
+        {
+          "title": "Color",
+          "values": ["#FEF3C7", "#4B5563", "#7C2D12"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "Default",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 22000
+            }
+          ],
+          "options": [
+            {
+              "value": "#4B5563"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        },
+        {
+          "title": "Default",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 22000
+            }
+          ],
+          "options": [
+            {
+              "value": "#7C2D12"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        },
+        {
+          "title": "Default",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 22000
+            }
+          ],
+          "options": [
+            {
+              "value": "#FEF3C7"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Zip Basket",
+      "subtitle": null,
+      "description": "Massa ultricies mi quis hendrerit dolor magna eget est lorem. Felis imperdiet proin fermentum leo vel. Quam id leo in vitae turpis massa sed.",
+      "handle": "zip-basket",
+      "is_giftcard": false,
+      "weight": 400,
+      "images": ["https://tailwindui.com/img/ecommerce-images/category-page-07-product-05.jpg"],
+      "options": [
+        {
+          "title": "Size",
+          "values": ["XS", "S"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "Default",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 14000
+            }
+          ],
+          "options": [
+            {
+              "value":  "XS"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Zip High Wall Tote",
+      "subtitle": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "handle": "zip-high-wall-tote",
+      "is_giftcard": false,
+      "weight": 400,
+      "images": ["https://tailwindui.com/img/ecommerce-images/category-page-07-product-06.jpg"],
+      "options": [
+        {
+          "title": "Color",
+          "values": ["#374151", "#FFF"]
+        },
+        {
+          "title": "Size",
+          "values": ["XS", "S", "2XL", "3XL"]
+        }
+      ],
+      "variants": [
+        {
+          "title": "Default",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 5000
+            }
+          ],
+          "options": [
+            {
+              "value": "#374151"
+            },
+            {
+              "value": "3XL"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        },
+        {
+          "title": "Default",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 5000
+            }
+          ],
+          "options": [
+            {
+              "value": "#374151"
+            },
+            {
+              "value": "S"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        },
+        {
+          "title": "Default",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 5000
+            }
+          ],
+          "options": [
+            {
+              "value": "#FFF"
+            },
+            {
+              "value": "2XL"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        }
+      ]
+    }
+  ],
   "categories":[]
 }

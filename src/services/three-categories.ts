@@ -1,6 +1,5 @@
 import { BaseService } from "medusa-interfaces";
 import {ProductCollectionService, ProductService, ProductCollection, Product, PaymentService, RegionService, PaymentProviderService} from "@medusajs/medusa"
-import {AggregationCursorResult} from "typeorm"
 import {FindProductConfig} from "@medusajs/medusa/dist/types/product"
 import TopProductsService from "./top-products"
 

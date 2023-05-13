@@ -33,6 +33,7 @@ const DATABASE_URL = process.env.DATABASE_URL || `postgres://postgres:postgres@l
 const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
 
 const plugins = [
+  /*"medusa-plugin-reviews",*/
   {
     resolve: `medusa-plugin-meilisearch`,
     options: {
@@ -56,6 +57,7 @@ const plugins = [
             filterableAttributes: [
               "collection_id",
               "collection.handle",
+              "handle",
               "variants.prices.amount",
               "variants.id",
               "variants.inventory_quantity",
@@ -97,7 +99,7 @@ const plugins = [
 ];
 
 const modules = {
-  /*eventBus: {
+  eventBus: {
     resolve: "@medusajs/event-bus-redis",
     options: {
       redisUrl: REDIS_URL
@@ -108,7 +110,7 @@ const modules = {
     options: {
       redisUrl: REDIS_URL
     }
-  },*/
+  },
 }
 
 /** @type {import('@medusajs/medusa').ConfigModule["projectConfig"]} */

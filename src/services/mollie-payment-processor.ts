@@ -85,7 +85,7 @@ class MolliePaymentProcessor extends AbstractPaymentProcessor {
 		// @todo: Update README with this
 		// @todo: This should only be ran on dev mode!
 		if (!TUNNEL_URL) {
-			const { url } = tunnel({ port: 9000 })
+			const { url } = await tunnel({ port: 9000 })
 			TUNNEL_URL = url
 			console.log(`Local tunnel: ${url}`)
 			this.tunnelUrl = url
@@ -104,6 +104,7 @@ class MolliePaymentProcessor extends AbstractPaymentProcessor {
 			method: context.billing_address?.metadata?.method,
 			metadata: { cart_id: context.resource_id },
 			// tunnelUrl is used in dev mode
+			// @todo: replace with production url
 			webhookUrl: `${this.tunnelUrl || ''}/mollie/payment-status`,
 			
 			
@@ -296,6 +297,7 @@ class MolliePaymentProcessor extends AbstractPaymentProcessor {
 			}
 			case "authorized": {
 				// @todo: KLARNA. Klarna payments are only done on the order is fulfilled, do something here.
+				// @todo: Talk back with molile that the products are shipped
 				break
 			}
 		}
