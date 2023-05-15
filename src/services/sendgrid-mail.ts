@@ -6,7 +6,8 @@ class SendgridMailService extends BaseService {
 	
 	constructor() {
 		super();
-		mail.setApiKey("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")
+		console.log("SENDGRID: ", process.env.SEND_GRID_ACCESS_TOKEN)
+		mail.setApiKey(process.env.SEND_GRID_ACCESS_TOKEN)
 	}
 	
 	protected sender = "gustavodacrvi@gmail.com"
