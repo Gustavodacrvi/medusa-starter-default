@@ -12,7 +12,7 @@ import { Address as MollieAddress } from "@mollie/api-client/dist/types/src/data
 import {CreateParameters} from "@mollie/api-client/dist/types/src/binders/payments/parameters"
 import {UpdateParameters} from "@mollie/api-client/dist/types/src/binders/orders/parameters"
 import CrossellingDiscountService, {CrossellingDiscount} from "./crosselling-discount"
-import SendgridMailService from "./sendgrid-mail"
+// import SendgridMailService from "./sendgrid-mail"
 // For development only
 const tunnel = require('localtunnel')
 // @todo: Put this on a env variable!
@@ -68,7 +68,7 @@ class MolliePaymentProcessor extends AbstractPaymentProcessor {
 	static identifier = "mollie"
 	
 	protected crossellingDiscount: CrossellingDiscountService
-	protected sendgridMailService: SendgridMailService
+	// protected sendgridMailService: SendgridMailService
 	protected orderService: OrderService
 	protected mollie: ReturnType<typeof createMollieClient>
 	protected tunnelUrl: string | null = TUNNEL_URL
@@ -76,7 +76,7 @@ class MolliePaymentProcessor extends AbstractPaymentProcessor {
 	constructor(services) {
 		super(services)
 		this.crossellingDiscount = services.crossellingDiscountService
-		this.sendgridMailService = services.sendgridMailService
+		// this.sendgridMailService = services.sendgridMailService
 		this.orderService = services.orderService
 		this.mollie = createMollieClient({ apiKey: 'test_Agd9HbxSNkwaWSukSdENcVkJ6ym42S' })
 	}
@@ -172,7 +172,7 @@ class MolliePaymentProcessor extends AbstractPaymentProcessor {
 			console.log("context:: ", context)
 			console.log("paymentSessionData:: ", paymentSessionData)
 			if (status === "authorized") {
-				await this.sendgridMailService.sendSomeEmail(data.email, "This is a test!")
+				// await this.sendgridMailService.sendSomeEmail(data.email, "This is a test!")
 			}
 			if (this.crossellingDiscount.isAllowedToHaveDiscount(payment, context, paymentSessionData as unknown as PaymentSessionData)) {
 				data = {
